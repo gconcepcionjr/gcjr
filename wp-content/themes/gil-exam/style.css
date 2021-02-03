@@ -1,0 +1,236 @@
+/*
+Theme Name: GIL EXAM;
+Theme URI: https://gcwebph.com
+Author: Gil Concepcion Jr
+Author URI: https://gcwebph.com
+Version 1.0
+*/
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+
+h1 {
+	font-size: 45px;
+}
+
+h2 {
+	font-size: 40px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 20px;
+}
+
+h4 {
+	font-size: 16px;
+}
+
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 3px solid #c8d9e5;
+  width: 10%;
+}
+
+.fa {
+  padding: 8px;
+  font-size: 16px;
+  width:32px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 100%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #bdd1df;
+  color: white;
+}
+
+.fa-twitter {
+  background: #bdd1df;
+  color: white;
+}
+
+.fa-google {
+  background: #bdd1df;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #bdd1df;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bdd1df;
+  color: white;
+}
+
+.fa-instagram {
+  background: #bdd1df;
+  color: white;
+}
+
+
+.head-one {
+	background-color: #924a8a;
+	height: 100vh;
+
+}
+
+.fill{
+	min-height: 100%;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.head-one h1 {
+	font-size: 45px;
+	color: #fff;
+	margin-bottom:20px;
+}
+
+a[class*="btn"] {
+    text-decoration: none;
+}
+
+
+.btn-gradient {
+    text-decoration: none;
+    color: white;
+    padding: 10px 30px;
+    display: inline-block;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.21);
+    border-bottom: 4px solid rgba(0,0,0,0.21);
+    border-radius: 4px;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+
+.btn-gradient.orange {
+    background: rgba(255,105,30,1);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(255,105,30,1)), to(rgba(230,95,28,1)));
+    background: -webkit-linear-gradient(rgba(255,105,30,1) 0%, rgba(230,95,28,1) 100%);
+    background: -moz-linear-gradient(rgba(255,105,30,1) 0%, rgba(230,95,28,1) 100%);
+    background: -o-linear-gradient(rgba(255,105,30,1) 0%, rgba(230,95,28,1) 100%);
+    background: linear-gradient(rgba(255,105,30,1) 0%, rgba(230,95,28,1) 100%);
+}
+
+.btn-gradient.green {
+	background: rgba(27,188,194,1);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(27,188,194,1)), to(rgba(24,163,168,1)));
+    background: -webkit-linear-gradient(rgba(27,188,194,1) 0%, rgba(24,163,168,1) 100%);
+    background: -moz-linear-gradient(rgba(27,188,194,1) 0%, rgba(24,163,168,1) 100%);
+    background: -o-linear-gradient(rgba(27,188,194,1) 0%, rgba(24,163,168,1) 100%);
+}
+
+
+.btn-gradient.large {
+    padding: 10px 45px;
+    font-size: 22px;
+}
+
+
+.services {
+		background-color: #17c2a4;
+		padding: 65px 0;
+}
+
+.skills {
+		background-color: #fff;
+		padding: 65px 0;
+}
+
+.team {
+		background-color: #e7f1f8;
+		padding: 65px 0;
+}
+
+.portfolio {
+		background-color: #ffdd99;
+		padding: 65px 0;
+}
+.whatpeople {
+		background-color: #d74680;
+		padding: 65px 0;
+}
+
+.getintouch {
+		background-color: #3c5499;
+		padding: 65px 0;
+}
+.svcs {
+	color: #fff;
+}
+
+.white {
+	color: #fff;
+}
+.pad-45{
+	padding:45px 0;
+}
+
+
+
+.lb-blue {
+	color: #3c4761
+}
+.db-blue{
+	color: #27283d;
+}
+
+.lt-blue {
+	color: #3cbee8;
+}
+.dk-gray {
+	color: #393939;
+}
+.flesh {
+	color: #ffdd99;
+}
+
+.all-cp {
+	font-size: 20px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.reduced {
+	width: 100%;
+}
+
+.testi {
+	font-size: 22px;
+	font-weight: 400;
+}

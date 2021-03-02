@@ -1,6 +1,6 @@
 <?php
 /*
- *  Author: Todd Motto | @toddmotto
+ *  Author: Todd Motto | @toddmotto hello
  *  URL: html5blank.com | @html5blank
  *  Custom functions, support, custom post types and more.
  */

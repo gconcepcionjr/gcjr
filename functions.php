@@ -1,6 +1,6 @@
 <?php
 /*
- *  Author: Todd Motto | @toddmotto hello
+ *  Author: Todd Motto | @toddmotto
  *  URL: html5blank.com | @html5blank
  *  Custom functions, support, custom post types and more.
  */
@@ -47,7 +47,7 @@ if (function_exists('add_theme_support'))
 
     add_image_size('cbd_reviews_thumbnail', 270, 155, true); // sidebar images
 
-   // add_image_size('main_post_image', 800, 534, true);
+ //   add_image_size('main_post_image', 800, 534, true);
 
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
@@ -149,28 +149,17 @@ function html5blank_conditional_scripts()
 function html5blank_styles()
 {
 
-    $detect = new Mobile_Detect;
+    wp_register_style('bootstrap-grid', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css', '', '1.0', 'all');
+    wp_enqueue_style('bootstrap-grid'); // Enqueue it!
 
-    if ( $detect->isMobile() && (!$detect->isTablet()) ) {
+    wp_register_style('html5blank', get_template_directory_uri() . '/assets/css/style.min.css', array('bootstrap-grid'), '1.0', 'all');
+    wp_enqueue_style('html5blank'); // Enqueue it!
 
-//        wp_register_style('html5blank', get_template_directory_uri() . '/assets/css/style.min.css', array(), '1.0', 'all');
-//        wp_enqueue_style('html5blank'); // Enqueue it!
+    wp_register_style('slick-css', get_template_directory_uri() .'/edit-carousel/slick/slick.css', array(), '1.0', 'all');
+    wp_enqueue_style('slick-css'); // Enqueue it!
 
-    }else{
-
-        wp_register_style('bootstrap-grid', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css', '', '1.0', 'all');
-        wp_enqueue_style('bootstrap-grid'); // Enqueue it!
-
-        wp_register_style('html5blank', get_template_directory_uri() . '/assets/css/style.min.css', array('bootstrap-grid'), '1.0', 'all');
-        wp_enqueue_style('html5blank'); // Enqueue it!
-
-        wp_register_style('slick-css', get_template_directory_uri() .'/edit-carousel/slick/slick.css', array(), '1.0', 'all');
-        wp_enqueue_style('slick-css'); // Enqueue it!
-
-        wp_register_style('slick-theme-css', get_template_directory_uri() .'/edit-carousel/slick/slick-theme.css', array(), '1.0', 'all');
-        wp_enqueue_style('slick-theme-css'); // Enqueue it!
-
-    }
+    wp_register_style('slick-theme-css', get_template_directory_uri() .'/edit-carousel/slick/slick-theme.css', array(), '1.0', 'all');
+    wp_enqueue_style('slick-theme-css'); // Enqueue it!
 
 }
 
@@ -679,12 +668,6 @@ function func_cbd_load_data(){
         get_template_part('template-parts/trusted-brands-home');
     }
 
-    if($data == "home_grid_gallery"){
-
-        get_template_part('template-parts/grid-gallery');;
-
-    }
-
     if($data == "home_sidebar"){
 
     ?>
@@ -693,9 +676,9 @@ function func_cbd_load_data(){
         <?php get_sidebar('latest-posts'); ?>
         <?php get_sidebar('popular-posts'); ?>
 
-        <!--div class="sidebar_ad-banner-bottom">
+        <div class="sidebar_ad-banner-bottom">
             <div data-mantis-zone="sidebar"></div>
-        </div-->
+        </div>
 
     <?php
 
@@ -746,7 +729,7 @@ function ads_code_func( $atts ) {
 
     endif;
 
-    return $code;
+   return $code;
 }
 
 add_shortcode( 'ads_code', 'ads_code_func' );
@@ -1012,45 +995,30 @@ function table_img_func( $atts ){
 }
 add_shortcode('table_img', 'table_img_func');
 
-add_filter( 'wpseo_stylesheet_url', function( $stylesheet ) {
+//cbd review filter
 
-    if (strpos($stylesheet, '/plugins/wpseo-news/assets/xml-news-sitemap.xsl') !== false) {
+// add a skin in a plugin/theme
+add_filter('tg_add_item_skin', function($skins) {
 
-        return preg_replace( '33g6ft32cafi1nkcg843nyhn-wpengine.netdna-ssl.com', 'thecbdinsider.com', $stylesheet, 1 );
-    }
+    $PATH = get_stylesheet_directory_uri();
+	
+    
+    // register a skin and add it to the main skins array
+    $skins['my-skin1'] = array(
+        'type'   => 'grid',
+        'filter' => 'cbd_filter',
+        'slug'   => 'cbd_filter',
+        'name'   => 'CBD Filter',
+        'php'    => $PATH . '/the-grid/grid/my-skin1/my-skin1.php',
+        'css'    => $PATH . '/the-grid/grid/my-skin1/my-skin1.css',
+        'col'    => 1, // col number in preview skin mode
+        'row'    => 1  // row number in preview skin mode
+    );	
+	
+    // return the skins array + the new one you added (in this example 2 new skins was added)
+    return $skins;
+    
+});
 
-
-    return $stylesheet;
-
-} );
-
-function combined_css_pattern_filter( $value ) {
-
-    $detect = new Mobile_Detect;
-
-    if ( $detect->isMobile() && (!$detect->isTablet()) ) {
-
-        $value = '/<\/body>/i';
-
-    }
-
-    return $value;
-
-}
-
-add_filter( 'combined_css_pattern', 'combined_css_pattern_filter', 10, 2 );
-
-
-if( function_exists('acf_add_options_page') ) {
-
-    acf_add_options_page(array(
-        'page_title' 	=> 'Theme General Settings',
-        'menu_title'	=> 'Theme Settings',
-        'menu_slug' 	=> 'theme-general-settings',
-        'capability'	=> 'edit_posts',
-        'redirect'		=> false
-    ));
-
-}
 
 ?>
